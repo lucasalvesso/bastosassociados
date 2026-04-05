@@ -427,13 +427,13 @@ h1 {
 }
 
 .icon-whatsapp {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 }
 
 .icon-whatsapp svg {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     fill: currentColor;
 }
 
@@ -507,8 +507,9 @@ h1 {
         }
 
         .hero-points {
-            justify-content: center;
+            justify-content: normal;
             gap: 14px;
+            width: 50%;
         }
 
         .hero-actions {
@@ -567,6 +568,7 @@ h1 {
 
         .hero-points {
             width: 70%;
+            justify-content: normal;
         }
     }
 }
