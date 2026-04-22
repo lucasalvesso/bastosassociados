@@ -1,15 +1,16 @@
 :root {
-    --bg: #f4efea;
-    --surface: #fffaf7;
+    --bg: #ebe6e2;
+    --surface: rgba(255, 251, 248, 0.96);
     --surface-strong: #ffffff;
-    --surface-soft: #f7ece6;
-    --text: #372a27;
-    --muted: #6f6158;
-    --line: rgba(120, 91, 76, 0.14);
-    --primary: #a97162;
-    --primary-dark: #8e5b4f;
-    --primary-soft: rgba(169, 113, 98, 0.12);
-    --shadow: 0 20px 55px rgba(79, 54, 46, 0.08);
+    --surface-soft: #efe5df;
+    --text: #3e3130;
+    --muted: #6d625e;
+    --line: rgba(121, 107, 100, 0.18);
+    --primary: #ab7265;
+    --primary-dark: #4c3b3c;
+    --primary-soft: rgba(171, 114, 101, 0.14);
+    --accent: #c5a567;
+    --shadow: 0 24px 60px rgba(59, 42, 39, 0.1);
     --radius-xl: 28px;
     --radius-lg: 20px;
     --radius-md: 16px;
@@ -29,8 +30,8 @@ body {
     margin: 0;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background:
-        radial-gradient(circle at top left, rgba(169, 113, 98, 0.08), transparent 35%),
-        linear-gradient(180deg, #f7f2ee 0%, #f2ece8 100%);
+        radial-gradient(circle at top left, rgba(171, 114, 101, 0.09), transparent 34%),
+        linear-gradient(180deg, #f3eeea 0%, #e9e2dd 100%);
     color: var(--text);
 }
 
@@ -46,10 +47,42 @@ svg {
     padding: 28px 0 100px;
 }
 
+
+.brand-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 22px;
+    padding: 6px 4px 2px;
+}
+
+.brand-line {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(197, 165, 103, 0), rgba(197, 165, 103, 0.75), rgba(171, 114, 101, 0.45));
+}
+
+.brand-line:last-child {
+    background: linear-gradient(90deg, rgba(171, 114, 101, 0.45), rgba(197, 165, 103, 0.75), rgba(197, 165, 103, 0));
+}
+
+.brand-lockup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+.brand-logo {
+    width: min(100%, 360px);
+    max-height: 120px;
+    object-fit: contain;
+}
+
 .hero-card,
 .section-card {
-    background: rgba(255, 250, 247, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.88);
     box-shadow: var(--shadow);
     border-radius: var(--radius-xl);
 }
@@ -66,7 +99,8 @@ svg {
     width: fit-content;
     padding: 8px 14px;
     border-radius: 999px;
-    background: var(--primary-soft);
+    background: rgba(255, 249, 245, 0.76);
+    border: 1px solid rgba(197, 165, 103, 0.34);
     color: var(--primary-dark);
     font-size: 0.79rem;
     font-weight: 700;
@@ -89,8 +123,10 @@ h1 {
 
 .hero-banner {
     position: relative;
-    min-height: 500px;
-    background-image: linear-gradient(90deg, rgba(247, 241, 232, 0.92) 0%, rgba(247, 241, 232, 0.88) 30%, rgba(247, 241, 232, 0.56) 60%, rgba(247, 241, 232, 0.08) 100%), var(--hero-image);
+    min-height: 540px;
+    background-image:
+        linear-gradient(90deg, rgba(247, 241, 232, 0.92) 0%, rgba(247, 241, 232, 0.88) 30%, rgba(247, 241, 232, 0.56) 60%, rgba(247, 241, 232, 0.08) 100%),
+        var(--hero-image);
     background-size: cover;
     background-position: center right;
     display: flex;
@@ -108,15 +144,15 @@ h1 {
 .hero-content {
     position: relative;
     z-index: 1;
-    width: min(100%, 55%);
-    padding: 46px 48px;
+    width: min(100%, 56%);
+    padding: 58px 50px 52px;
     display: flex;
     flex-direction: column;
     gap: 18px;
+}
 
-    h1 {
-        font-size: 28px;
-    }
+.hero-content h1 {
+    font-size: clamp(2.1rem, 3.2vw, 4rem);
 }
 
 .hero-text,
@@ -127,14 +163,14 @@ h1 {
 .faq-list p,
 .intro-grid p {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.72;
     color: var(--muted);
     margin: 0;
 }
 
 .hero-text {
-    max-width: 58ch;
-    color: #564741;
+    max-width: 60ch;
+    color: #574a47;
 }
 
 .hero-points {
@@ -149,8 +185,8 @@ h1 {
     min-height: 38px;
     padding: 8px 14px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(169, 113, 98, 0.18);
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(171, 114, 101, 0.18);
     color: var(--primary-dark);
     font-size: 0.92rem;
     font-weight: 600;
@@ -186,7 +222,7 @@ h1 {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: #fff;
-    box-shadow: 0 14px 30px rgba(142, 91, 79, 0.26);
+    box-shadow: 0 14px 30px rgba(76, 59, 60, 0.2);
 }
 
 .btn-large {
@@ -199,11 +235,11 @@ h1 {
 }
 
 .intro-card {
-    background: linear-gradient(180deg, rgba(255, 250, 247, 0.98), rgba(252, 246, 242, 0.98));
+    background: linear-gradient(180deg, rgba(255, 251, 248, 0.98), rgba(249, 243, 239, 0.98));
 }
 
 .soft-section {
-    background: linear-gradient(180deg, rgba(247, 236, 230, 0.7), rgba(255, 250, 247, 0.98));
+    background: linear-gradient(180deg, rgba(239, 229, 223, 0.82), rgba(255, 251, 248, 0.98));
 }
 
 .section-header {
@@ -243,7 +279,7 @@ h1 {
 .service-card,
 .step-card,
 .benefit-card {
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.84);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: 22px;
@@ -272,7 +308,7 @@ h1 {
     align-items: center;
     justify-content: center;
     border-radius: 18px;
-    background: var(--primary-soft);
+    background: linear-gradient(180deg, rgba(197, 165, 103, 0.18), rgba(171, 114, 101, 0.12));
 }
 
 .service-icon svg {
@@ -307,7 +343,7 @@ h1 {
     width: 120px;
     height: 120px;
     border-radius: 999px;
-    background: radial-gradient(circle, rgba(169, 113, 98, 0.14), transparent 70%);
+    background: radial-gradient(circle, rgba(171, 114, 101, 0.14), transparent 70%);
 }
 
 .step-number {
@@ -321,7 +357,7 @@ h1 {
     font-weight: 800;
     color: #fff;
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    box-shadow: 0 10px 20px rgba(142, 91, 79, 0.2);
+    box-shadow: 0 10px 20px rgba(76, 59, 60, 0.18);
 }
 
 .benefits-grid {
@@ -370,7 +406,7 @@ h1 {
     display: grid;
     place-items: center;
     color: var(--primary-dark);
-    background: var(--primary-soft);
+    background: rgba(197, 165, 103, 0.18);
     font-size: 1rem;
     font-weight: 800;
 }
@@ -388,6 +424,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    background: linear-gradient(180deg, rgba(255, 251, 248, 0.98), rgba(243, 236, 231, 0.98));
 }
 
 .site-footer {
@@ -399,7 +436,8 @@ h1 {
 }
 
 .site-footer p,
-.site-footer span {
+.site-footer span,
+.site-footer div {
     margin: 0;
 }
 
@@ -409,7 +447,15 @@ h1 {
     color: var(--text);
 }
 
+.site-footer div {
+    margin-top: 6px;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
 .footer-address {
+    display: inline-block;
+    margin-top: 6px;
     white-space: pre-line;
 }
 
@@ -444,20 +490,12 @@ h1 {
 @media (max-width: 1100px) {
     .hero-banner {
         min-height: 520px;
-        background-position: 90% center;
+        background-position: 82% center;
     }
 
     .hero-content {
-        width: min(100%, 62%);
+        width: min(100%, 64%);
         padding: 40px 34px;
-
-        .hero-points {
-            width: 70%;
-        }
-
-        .hero-text {
-            width: 80%;
-        }
     }
 
     .cards-grid,
@@ -477,6 +515,16 @@ h1 {
         padding-bottom: 92px;
     }
 
+    .brand-header {
+        gap: 14px;
+        margin-bottom: 16px;
+    }
+
+    .brand-logo {
+        width: min(100%, 250px);
+        max-height: 96px;
+    }
+
     .hero-card,
     .section-card {
         padding: 22px;
@@ -488,37 +536,28 @@ h1 {
     }
 
     .hero-banner {
-        min-height: 450px;
+        min-height: 480px;
         align-items: flex-end;
         background-image:
             linear-gradient(180deg, rgba(247, 241, 232, 0.1) 0%, rgba(247, 241, 232, 0.18) 0%, rgba(247, 241, 232, 0.78) 0%, rgba(247, 241, 232, 0.98) 100%),
             var(--hero-image);
-        background-position: 85% top;
+        background-position: 72% top;
     }
 
     .hero-content {
         width: 100%;
         gap: 14px;
+        padding: 28px 24px 30px;
+    }
 
-        h1 {
-            font-size: 24px;
-            width: 60%;
-        }
+    .hero-content h1 {
+        font-size: 28px;
+        width: min(100%, 78%);
+    }
 
-        .hero-text {
-            width: 68%;
-            margin-bottom: 20px;
-        }
-
-        .hero-points {
-            justify-content: normal;
-            gap: 14px;
-            width: 50%;
-        }
-
-        .hero-actions {
-            justify-content: center;
-        }
+    .hero-text {
+        width: min(100%, 82%);
+        margin-bottom: 10px;
     }
 
     h1 {
@@ -543,9 +582,24 @@ h1 {
 }
 
 @media (max-width: 560px) {
+    .brand-header {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .brand-line {
+        width: 100%;
+    }
+
+    .brand-logo {
+        width: min(100%, 220px);
+        margin: 0 auto;
+    }
+
     .hero-banner {
-        min-height: 500px;
-        background-position: 80% top;
+        min-height: 520px;
+        background-position: 68% top;
     }
 
     .hero-points span {
@@ -558,21 +612,12 @@ h1 {
         width: 100%;
     }
 
-    .hero-content {
-        gap: 14px;
+    .hero-content h1 {
+        width: 100%;
+    }
 
-        h1 {
-            font-size: 24px;
-            width: 78%;
-        }
-
-        .hero-text {
-            width: 73%;
-        }
-
-        .hero-points {
-            width: 70%;
-            justify-content: normal;
-        }
+    .hero-text,
+    .hero-points {
+        width: 100%;
     }
 }
